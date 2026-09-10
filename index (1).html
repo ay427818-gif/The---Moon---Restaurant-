@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Moon Restaurant | Masaurhi, Bihar</title>
+  <meta name="description" content="The Moon Restaurant near Taregna Railway Station, Masaurhi, Bihar. Good Food • Great Vibes • Always.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --gold:#f7c62e; --gold2:#ffd95b; --black:#050505; --card:#0c0c0c;
+      --muted:#c9c9c9; --line:rgba(247,198,46,.55); --white:#fff;
+    }
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{margin:0;background:var(--black);color:#fff;font-family:Poppins,Arial,sans-serif}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(1180px,92%);margin:auto}
+    .gold{color:var(--gold)}
+    .btn{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--gold);border-radius:30px;padding:12px 21px;font-weight:600;background:linear-gradient(90deg,var(--gold),#ffdd66);color:#080808;transition:.25s}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(247,198,46,.22)}
+    .btn.outline{background:transparent;color:#fff}
+    header{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.92);backdrop-filter:blur(10px);border-bottom:1px solid #333}
+    .nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{font-family:"Playfair Display",serif;color:var(--gold);font-size:30px;font-weight:700;line-height:.85}
+    .logo small{display:block;color:#fff;font-family:Poppins;font-size:10px;letter-spacing:5px;text-align:center;margin-top:6px}
+    .links{display:flex;gap:30px;align-items:center}
+    .links a{font-size:14px;color:#eee;position:relative}
+    .links a.active,.links a:hover{color:var(--gold)}
+    .links a.active:after{content:"";position:absolute;left:0;right:0;height:2px;background:var(--gold);bottom:-10px}
+    .mobile{display:none;background:none;border:0;color:#fff;font-size:27px}
+    .hero{min-height:530px;display:flex;align-items:center;position:relative;overflow:hidden;background:
+      linear-gradient(90deg,rgba(0,0,0,.95) 0%,rgba(0,0,0,.82) 43%,rgba(0,0,0,.25) 75%,rgba(0,0,0,.78) 100%),
+      url('https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=1800&q=85') center/cover}
+    .hero:after{content:"☾";position:absolute;right:7%;top:50px;color:var(--gold2);font-size:100px;opacity:.9;transform:rotate(-15deg)}
+    .hero-content{width:min(650px,100%);padding:80px 0;position:relative;z-index:2}
+    .eyebrow{font-size:15px;margin-bottom:5px}
+    h1{font-family:"Playfair Display",serif;font-size:clamp(55px,8vw,100px);line-height:.82;margin:0;color:var(--gold);letter-spacing:-4px}
+    .hero h2{font-family:"Playfair Display",serif;font-size:24px;letter-spacing:7px;margin:13px 0;color:#fff}
+    .tagline{font-family:"Playfair Display",serif;color:var(--gold);font-size:19px}
+    .hero p{max-width:520px;color:#ddd;line-height:1.7}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    section{padding:70px 0}
+    .section-title{text-align:center;margin-bottom:38px}
+    .section-title .script{font-family:"Playfair Display",serif;font-style:italic;color:var(--gold);font-size:20px}
+    .section-title h2{font-family:"Playfair Display",serif;font-size:38px;margin:5px 0}
+    .section-title p{color:#aaa;margin:0}
+    .categories{border-top:1px solid #333;border-bottom:1px solid var(--line);padding:20px 0}
+    .cat-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+    .cat{padding:13px 5px;text-align:center;border-right:1px solid #333}
+    .cat:last-child{border:0}
+    .icon{width:60px;height:60px;margin:auto;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:27px}
+    .cat b{display:block;margin-top:8px;font-size:13px}
+    .about{background:#070707}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+    .about-img{height:390px;border-radius:6px;overflow:hidden;border:1px solid var(--line)}
+    .about-img img{width:100%;height:100%;object-fit:cover}
+    .about h2{font-family:"Playfair Display",serif;font-size:40px;margin:5px 0 14px}
+    .about p{color:#ddd;line-height:1.75}
+    .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+    .fact{border-top:1px solid var(--line);padding-top:12px}
+    .fact span{color:var(--gold);font-size:20px}.fact small{display:block;color:#bbb;margin-top:4px}
+    .menu-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+    .menu-card{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--card)}
+    .menu-card img{height:115px;width:100%;object-fit:cover}
+    .menu-card h3{font-family:"Playfair Display",serif;color:var(--gold);text-align:center;margin:9px 5px}
+    .items{padding:0 10px 12px}
+    .item{display:flex;justify-content:space-between;gap:8px;font-size:11px;padding:5px 0;border-bottom:1px solid #252525}
+    .item span:last-child{color:#ddd;white-space:nowrap}
+    .legend{font-size:9px;color:#bbb;padding:10px}.dot{display:inline-block;width:8px;height:8px;background:#22d83a;border-radius:50%;margin-right:4px}.dot.red{background:#ff2b35;margin-left:10px}
+    .lower{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:14px;align-items:stretch}
+    .panel{border:1px solid #333;border-radius:6px;overflow:hidden;background:#080808;min-height:250px}
+    .panel img{width:100%;height:150px;object-fit:cover}
+    .panel-body{padding:14px}.panel h3{font-family:"Playfair Display",serif;color:var(--gold);margin:0 0 7px}.panel p{font-size:12px;color:#bbb}
+    .stars{color:var(--gold);letter-spacing:2px}
+    .contact{border-top:1px solid var(--line);border-bottom:1px solid #333;background:#080808;padding:22px 0}
+    .contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .contact-card{display:flex;gap:12px;align-items:center;border-right:1px solid #333;padding-right:15px}
+    .contact-card:last-child{border:0}.contact-icon{width:44px;height:44px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:19px;flex:none}
+    .contact-card small{color:#aaa}.contact-card b{display:block;color:#fff;margin-top:3px}
+    footer{padding:28px 0 35px;text-align:center}
+    footer .logo{font-size:27px}
+    footer p{color:#999;font-size:12px}.social{display:flex;justify-content:center;gap:15px;margin:12px 0}.social a{width:36px;height:36px;border:1px solid #555;border-radius:50%;display:grid;place-items:center;color:var(--gold)}
+    .wa{position:fixed;right:20px;bottom:20px;width:55px;height:55px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:#fff;font-size:27px;z-index:60;box-shadow:0 8px 30px rgba(0,0,0,.5)}
+    @media(max-width:1000px){.menu-grid{grid-template-columns:repeat(3,1fr)}.cat-grid{grid-template-columns:repeat(3,1fr)}.contact-grid{grid-template-columns:repeat(2,1fr)}.lower{grid-template-columns:1fr 1fr}}
+    @media(max-width:720px){
+      .nav{height:62px}.links{display:none;position:absolute;top:62px;left:0;right:0;background:#080808;border-bottom:1px solid #333;padding:15px;flex-direction:column;gap:20px}.links.open{display:flex}.mobile{display:block}
+      .hero{min-height:600px}.hero:after{font-size:70px;right:5%;top:25px}.hero-content{padding:75px 0}.hero h2{font-size:18px;letter-spacing:4px}
+      .about-grid,.lower{grid-template-columns:1fr}.about-img{height:300px}.menu-grid{grid-template-columns:repeat(2,1fr)}.contact-grid{grid-template-columns:1fr}.contact-card{border-right:0;border-bottom:1px solid #333;padding-bottom:12px}
+      .facts{grid-template-columns:1fr}.cat-grid{grid-template-columns:repeat(3,1fr)}
+    }
+    @media(max-width:430px){.menu-grid{grid-template-columns:1fr 1fr}.cat{font-size:11px}.icon{width:50px;height:50px;font-size:22px}section{padding:55px 0}h1{font-size:58px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a href="#home" class="logo">The Moon<small>RESTAURANT</small></a>
+    <button class="mobile" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
+    <nav class="links">
+      <a class="active" href="#home">Home</a><a href="#about">About</a><a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a>
+      <a class="btn outline" target="_blank" href="https://wa.me/917321027612?text=Hello%20The%20Moon%20Restaurant%2C%20I%20want%20to%20place%20an%20order.">☏ Order on WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="container hero-content">
+    <div class="eyebrow">Welcome to</div>
+    <h1>The Moon</h1>
+    <h2>RESTAURANT</h2>
+    <div class="tagline">Good Food • Great Vibes • Always</div>
+    <p>Delicious food, cozy ambience and a perfect place to create beautiful memories with your loved ones.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#menu">🍴 View Menu</a>
+      <a class="btn outline" href="#contact">▣ Book a Table</a>
+    </div>
+  </div>
+</section>
+
+<section class="categories">
+  <div class="container cat-grid">
+    <div class="cat"><div class="icon">🍲</div><b>Indian Food</b></div>
+    <div class="cat"><div class="icon">🍕</div><b>Pizza</b></div>
+    <div class="cat"><div class="icon">🍔</div><b>Burger</b></div>
+    <div class="cat"><div class="icon">🍜</div><b>Chinese Food</b></div>
+    <div class="cat"><div class="icon">🥤</div><b>Beverages</b></div>
+    <div class="cat"><div class="icon">🍰</div><b>Desserts</b></div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="container about-grid">
+    <div class="about-img"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85" alt="The Moon Restaurant ambience"></div>
+    <div>
+      <div class="script gold" style="font-family:'Playfair Display';font-style:italic;font-size:23px">About Us</div>
+      <h2>The Moon Restaurant</h2>
+      <p>The Moon Restaurant is more than just a place to eat, it's a place to enjoy. We serve fresh, hygienic and delicious food with a variety of cuisines to satisfy every taste. Our goal is to give you the best food, best service and a memorable experience.</p>
+      <div class="facts">
+        <div class="fact"><span>●</span><small>Owned By<br><b>Ashish Kumar</b></small></div>
+        <div class="fact"><span>⌖</span><small>Near Taregna Railway Station<br><b>Masaurhi, Bihar</b></small></div>
+        <div class="fact"><span>◷</span><small>Opening Hours<br><b>11:00 AM – 11:00 PM</b></small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="container">
+    <div class="section-title"><div class="script">Our Menu</div><h2>Fresh Food • Best Taste</h2><p>Reasonable Price</p></div>
+    <div class="menu-grid">
+      <div class="menu-card"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&q=80"><h3>Indian Food</h3><div class="items">
+        <div class="item"><span>Dal Tadka</span><span>₹80</span></div><div class="item"><span>Paneer Butter Masala</span><span>₹120</span></div><div class="item"><span>Mix Veg</span><span>₹90</span></div><div class="item"><span>Chicken Curry</span><span>₹150</span></div><div class="item"><span>Butter Chicken</span><span>₹170</span></div><div class="item"><span>Roti (2 pcs)</span><span>₹20</span></div><div class="item"><span>Naan</span><span>₹40</span></div></div><div class="legend"><i class="dot"></i>Veg <i class="dot red"></i>Non-Veg</div></div>
+
+      <div class="menu-card"><img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=600&q=80"><h3>Pizza</h3><div class="items">
+        <div class="item"><span>Margherita</span><span>₹120</span></div><div class="item"><span>Veg Pizza</span><span>₹150</span></div><div class="item"><span>Paneer Pizza</span><span>₹180</span></div><div class="item"><span>Chicken Pizza</span><span>₹220</span></div><div class="item"><span>Farm House</span><span>₹200</span></div><div class="item"><span>Extra Cheese</span><span>₹30</span></div></div><div class="legend"><i class="dot"></i>Veg <i class="dot red"></i>Non-Veg</div></div>
+
+      <div class="menu-card"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80"><h3>Burger</h3><div class="items">
+        <div class="item"><span>Veg Burger</span><span>₹60</span></div><div class="item"><span>Cheese Burger</span><span>₹80</span></div><div class="item"><span>Paneer Burger</span><span>₹90</span></div><div class="item"><span>Chicken Burger</span><span>₹110</span></div><div class="item"><span>Double Burger</span><span>₹140</span></div></div><div class="legend"><i class="dot"></i>Veg <i class="dot red"></i>Non-Veg</div></div>
+
+      <div class="menu-card"><img src="https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=600&q=80"><h3>Chinese Food</h3><div class="items">
+        <div class="item"><span>Veg Chowmein</span><span>₹100</span></div><div class="item"><span>Chicken Chowmein</span><span>₹130</span></div><div class="item"><span>Veg Fried Rice</span><span>₹90</span></div><div class="item"><span>Egg Fried Rice</span><span>₹110</span></div><div class="item"><span>Chicken Fried Rice</span><span>₹140</span></div><div class="item"><span>Manchurian</span><span>₹120</span></div></div><div class="legend"><i class="dot"></i>Veg <i class="dot red"></i>Non-Veg</div></div>
+
+      <div class="menu-card"><img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=600&q=80"><h3>Beverages</h3><div class="items">
+        <div class="item"><span>Cold Drink</span><span>₹20</span></div><div class="item"><span>Masala Soda</span><span>₹30</span></div><div class="item"><span>Fresh Lime</span><span>₹40</span></div><div class="item"><span>Iced Tea</span><span>₹50</span></div><div class="item"><span>Milkshake</span><span>₹70</span></div><div class="item"><span>Hot Coffee</span><span>₹50</span></div></div><div class="legend"><i class="dot"></i>Veg <i class="dot red"></i>Non-Veg</div></div>
+
+      <div class="menu-card"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80"><h3>Desserts</h3><div class="items">
+        <div class="item"><span>Ice Cream</span><span>₹50</span></div><div class="item"><span>Chocolate Cake</span><span>₹80</span></div><div class="item"><span>Brownie</span><span>₹70</span></div><div class="item"><span>Gulab Jamun</span><span>₹60</span></div><div class="item"><span>Kulfi</span><span>₹50</span></div></div><div class="legend"><i class="dot"></i>Veg <i class="dot red"></i>Non-Veg</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" style="padding-top:15px">
+  <div class="container">
+    <div class="section-title"><div class="script">Food Gallery</div><h2>A Glimpse of Our Delicious Moments</h2></div>
+    <div class="lower">
+      <div class="panel"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1000&q=80"><div class="panel-body"><h3>Pizza • Burger • Chinese • Desserts</h3><p>Freshly prepared dishes and cozy dining moments.</p><a class="btn outline" href="#menu">View Menu</a></div></div>
+      <div class="panel"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=80"><div class="panel-body"><h3>Special Weekend Offer</h3><p>Good Food • Great Vibes • Always. Dine In & Enjoy!</p></div></div>
+      <div id="reviews" class="panel"><div class="panel-body" style="padding:25px"><h3>Customer Reviews</h3><p>“The food is amazing and the ambience is so good. Best restaurant in Masaurhi! Highly recommended.”</p><div class="stars">★★★★★</div><p style="text-align:right">— Rahul Kumar</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container contact-grid">
+    <div class="contact-card"><div class="contact-icon">◉</div><div><small>Order on WhatsApp</small><b><a href="https://wa.me/917321027612">7321027612</a></b><small>Quick Order • Fast Delivery</small></div></div>
+    <div class="contact-card"><div class="contact-icon">⌕</div><div><small>Call Us</small><b><a href="tel:+917321027612">7321027612</a></b><small>We are here to help</small></div></div>
+    <div class="contact-card"><div class="contact-icon">✉</div><div><small>Email Us</small><b><a href="mailto:Ay427818@gmail.com">Ay427818@gmail.com</a></b><small>Send us your queries</small></div></div>
+    <div class="contact-card"><div class="contact-icon">⌖</div><div><small>Visit Us</small><b>Near Taregna Railway Station</b><small>Masaurhi, Bihar</small></div></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="logo">The Moon<small>RESTAURANT</small></div>
+    <p class="gold" style="font-family:'Playfair Display';font-size:16px">Good Food • Great Vibes • Always</p>
+    <div class="social"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="YouTube">▶</a></div>
+    <p>© 2025 The Moon Restaurant. All Rights Reserved.</p>
+  </div>
+</footer>
+<a class="wa" target="_blank" href="https://wa.me/917321027612?text=Hello%20The%20Moon%20Restaurant%2C%20I%20want%20to%20place%20an%20order." aria-label="Order on WhatsApp">◔</a>
+</body>
+</html>
